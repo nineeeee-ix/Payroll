@@ -1,0 +1,117 @@
+/* Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+}
+.form-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+}
+.field-group {
+  margin-bottom: 18px;
+}
+.field-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #555;
+}
+.field-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s;
+}
+.field-group input:focus {
+  border-color: #5dade2;
+  outline: none;
+}
+.btn-submit {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #5dade2, #2e86c1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background: linear-gradient(135deg, #3a8dc7, #1b4f72);
+}
+
+/* Result page overrides */
+.result-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  background: #ecf0f3;
+}
+.result-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 480px;
+  padding: 35px;
+}
+.result-card h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+.result-line {
+  border-top: 1px solid #ddd;
+  margin: 18px 0;
+}
+.result-card p, .result-card h3 {
+  font-size: 1rem;
+  margin: 6px 0;
+}
+.result-card .btn-back {
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #5dade2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.result-card .btn-back:hover {
+  background: #3a8dc7;
+}

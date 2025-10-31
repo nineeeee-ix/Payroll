@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payroll Result</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="result-wrapper">
+    <div class="card result-card">
+      <h2>Payroll Summary</h2>
+      <div id="resultArea"></div>
+      <button class="btn-back" onclick="goBack()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    const data = JSON.parse(localStorage.getItem('payrollData'));
+    const result = document.getElementById('resultArea');
+    if (!data) {
+      result.innerHTML = '<p>No data available.</p>';
+    } else {
+      result.innerHTML = `
+        <p><strong>ID:</strong> ${data.id}</p>
+        <p><strong>Name:</strong> ${data.lname}, ${data.fname} ${data.mname[0] || ''}.</p>
+        <p><strong>Position:</strong> ${data.position}</p>
+        <div class="result-line"></div>
+        <p><strong>Rate:</strong> ₱${data.rate.toFixed(2)}</p>
+        <p><strong>Work Days:</strong> ${data.days}</p>
+        <p><strong>Gross Pay:</strong> ₱${data.gross.toFixed(2)}</p>
+        <div class="result-line"></div>
+        <p><strong>Deductions:</strong></p>
+        <p>SSS (5%): ₱${data.sss.toFixed(2)}</p>
+        <p>PAG-IBIG (3%): ₱${data.pagibig.toFixed(2)}</p>
+        <p>PhilHealth (2%): ₱${data.philhealth.toFixed(2)}</p>
+        <p>Tax (5%): ₱${data.tax.toFixed(2)}</p>
+        <p><strong>Total Deduction:</strong> ₱${data.totalDeduction.toFixed(2)}</p>
+        <div class="result-line"></div>
+        <h3>Net Pay: ₱${data.net.toFixed(2)}</h3>
+      `;
+    }
+  </script>
+</body>
+</html>
